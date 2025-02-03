@@ -99,16 +99,16 @@ sequenceDiagram
 •	Scraper: A custom or third-party tool that scrapes recipe data from target websites.
 
 ## Key Considerations
-1.	Scalability:
-    •	Chat-service can be stateless and horizontally scaled.
-    •	Recipe data and user preference lookups should handle increased load (e.g., using DynamoDB’s auto-scaling features).
-2.	Data Quality:
-    •	Scraped data must be cleansed and normalized to ensure consistent and meaningful context for the LLM.
-3.	Personalization:
-    •	User feedback is critical for generating more personalized meal plans.
-    •	The design must handle ongoing updates to preferences (like new dietary restrictions or disliked ingredients).
-4.	Security:
-    •	Ensure that endpoints are secure and that user preference data is protected.
-    •	OAuth 2.0 or token-based authentication might be used to secure API calls.
-5.	Observability:
-    •	Logging, metrics, and tracing should be in place to monitor calls to OpenAI and DynamoDB.
+### Scalability:
+•	Chat-service can be stateless and horizontally scaled.
+•	Recipe data and user preference lookups should handle increased load (e.g., using DynamoDB’s auto-scaling features).
+### Data Quality:
+•	Scraped data must be cleansed and normalized to ensure consistent and meaningful context for the LLM.
+### Personalization:
+•	User feedback is critical for generating more personalized meal plans.
+•	The design must handle ongoing updates to preferences (like new dietary restrictions or disliked ingredients).
+### Security:
+•	Ensure that endpoints are secure and that user preference data is protected.
+•	OAuth 2.0 or token-based authentication might be used to secure API calls.
+### Observability:
+•	Logging, metrics, and tracing should be in place to monitor calls to OpenAI and DynamoDB.
