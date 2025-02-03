@@ -1,8 +1,10 @@
-package com.pk.phosphate;
+package com.pk.app.chatservice.controllers;
 
 import static org.springframework.ai.chat.client.advisor
     .AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY;
 
+import com.pk.app.chatservice.ask.Answer;
+import com.pk.app.chatservice.ask.Question;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;

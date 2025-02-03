@@ -1,13 +1,13 @@
-package com.pk.phosphate;
+package com.pk.app.chatservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PhosphateApplication {
+public class ChatServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PhosphateApplication.class, args);
+		SpringApplication.run(ChatServiceApplication.class, args);
 	}
 
 }

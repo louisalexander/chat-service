@@ -1,4 +1,4 @@
-package com.pk.phosphate;
+package com.pk.app.chatservice.ask;
 
 import org.slf4j.Logger;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
