@@ -63,3 +63,51 @@ flowchart LR
         G --> F
         F --> E
     end
+```
+	1.	Data Ingestion: A web scraper populates the recipe repository.
+	2.	Preferences: User feedback and preferences are stored in DynamoDB.
+	3.	Chat Service: The chat-service exposes a REST API, orchestrates retrieval of data from both sources, and invokes OpenAI.
+  ## Sequence Diagram (User Interaction)
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant ChatService
+    participant RecipeStore as Recipe Repository
+    participant Prefs as DynamoDB
+    participant OpenAI as OpenAI API
+
+    User->>ChatService: POST /chat (meal plan prompt)
+    ChatService->>RecipeStore: Query relevant recipes
+    ChatService->>Prefs: Fetch user preferences
+    ChatService->>OpenAI: Send combined context + prompt
+    OpenAI-->>ChatService: Return generated meal plan
+    ChatService-->>User: Response with personalized meal plan
+```
+
+	1.	The User sends a prompt (e.g., “Plan meals for next week”).
+	2.	Chat-Service retrieves the relevant recipes from the Recipe Repository and the user’s preferences from DynamoDB.
+	3.	Both sets of documents are passed to the OpenAI LLM for content generation.
+	4.	The generated meal plan is returned to the User.
+
+## Technology Stack
+	•	Spring Boot: Microservice framework for building RESTful services in Java.
+	•	Spring AI: Wrapper and utility library that simplifies integration with OpenAI’s LLMs.
+	•	OpenAI: Provides the text generation and understanding capabilities.
+	•	DynamoDB: Stores user preference documents for personalization.
+	•	Scraper: A custom or third-party tool that scrapes recipe data from target websites.
+
+## Key Considerations
+	1.	Scalability:
+	    •	Chat-service can be stateless and horizontally scaled.
+	    •	Recipe data and user preference lookups should handle increased load (e.g., using DynamoDB’s auto-scaling features).
+	2.	Data Quality:
+	    •	Scraped data must be cleansed and normalized to ensure consistent and meaningful context for the LLM.
+	3.	Personalization:
+	    •	User feedback is critical for generating more personalized meal plans.
+	    •	The design must handle ongoing updates to preferences (like new dietary restrictions or disliked ingredients).
+	4.	Security:
+	    •	Ensure that endpoints are secure and that user preference data is protected.
+	    •	OAuth 2.0 or token-based authentication might be used to secure API calls.
+	5.	Observability:
+	    •	Logging, metrics, and tracing should be in place to monitor calls to OpenAI and DynamoDB.
