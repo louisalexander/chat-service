@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a73054-f37c-4181-96cb-8ffcfc3bea4b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/controllers/ResponseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/controllers/ResponseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/dynamo/DynamoDbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/dynamo/DynamoDbConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/phosphate/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/ask/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/phosphate/AskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/controllers/AskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/phosphate/LoaderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/ask/LoaderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/phosphate/PhosphateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/ChatServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/phosphate/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/ask/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pk/phosphate/PhosphateApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/test/java/com/pk/persistence/StorageTest.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/ai/spring-ai-core/1.0.0-M5/spring-ai-core-1.0.0-M5.jar!/org/springframework/ai/chat/client/advisor/api/Advisor.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -58,6 +47,7 @@
   "keyToString": {
     "JUnit.AskControllerTest.executor": "Run",
     "JUnit.ChatServiceAppTests.executor": "Run",
+    "JUnit.ResponseRepositoryTest.executor": "Run",
     "JUnit.StorageTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -66,7 +56,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/pk/code/chat-service",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -80,6 +70,7 @@
       <recent name="com.pk.dynamo" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.pk.app.chatservice.responses" />
       <recent name="com.pk.chat" />
       <recent name="com.pk.persistence" />
     </key>
@@ -87,7 +78,7 @@
       <recent name="com.pk.persistence" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AskControllerTest">
+  <component name="RunManager" selected="JUnit.ResponseRepositoryTest">
     <configuration name="AskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat-service" />
       <extension name="coverage">
@@ -118,6 +109,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ResponseRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pk.app.chatservice.responses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pk.app.chatservice.responses" />
+      <option name="MAIN_CLASS_NAME" value="com.pk.app.chatservice.responses.ResponseRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StorageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat-service" />
       <extension name="coverage">
@@ -135,6 +141,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResponseRepositoryTest" />
         <item itemvalue="JUnit.AskControllerTest" />
         <item itemvalue="JUnit.ChatServiceAppTests" />
         <item itemvalue="JUnit.StorageTest" />
@@ -151,5 +158,21 @@
       <updated>1738608093449</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

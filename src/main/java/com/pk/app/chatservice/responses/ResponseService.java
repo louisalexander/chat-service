@@ -11,6 +11,10 @@ public class ResponseService {
 
     private final ResponseRepository repository;
 
+    private ResponseService() {
+        this.repository = null;
+    }
+
     public List<ResponseEntity> getAll() {
         return repository.getAll();
     }
