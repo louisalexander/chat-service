@@ -11,11 +11,14 @@ public class ResponseService {
 
     private final ResponseRepository repository;
 
-    private ResponseService() {
-        this.repository = null;
-    }
 
     public List<ResponseEntity> getAll() {
         return repository.getAll();
+    }
+
+    public void save(ResponseEntity response) {
+        if (repository != null) {
+            repository.save(response);
+        }
     }
 }

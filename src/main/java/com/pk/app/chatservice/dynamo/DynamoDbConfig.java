@@ -52,7 +52,12 @@ public class DynamoDbConfig {
     }
 
     @Bean
-    public DynamoDbTable<ResponseEntity> getCountryLocaleTable(DynamoDbEnhancedClient dbClient) {
-        return dbClient.table(ResponseEntity.TABLE_NAME, TableSchema.fromBean(ResponseEntity.class));
+    public DynamoDbTable<ResponseEntity> getUserResponsesTable(DynamoDbEnhancedClient dbClient) {
+
+
+        log.info("Creating table: " + ResponseEntity.TABLE_NAME);
+        DynamoDbTable<ResponseEntity> table = dbClient.table(ResponseEntity.TABLE_NAME, TableSchema.fromBean(ResponseEntity.class));
+        log.info(table.toString());
+        return table;
     }
 }

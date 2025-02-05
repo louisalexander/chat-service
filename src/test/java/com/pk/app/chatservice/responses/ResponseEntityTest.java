@@ -9,7 +9,7 @@ class ResponseEntityTest {
     void getUserReturnsCorrectUserId() {
         ResponseEntity responseEntity = new ResponseEntity();
         responseEntity.setUserId("user123");
-        assertEquals("user123", responseEntity.getUser());
+        assertEquals("user123", responseEntity.getUserId());
     }
 
     @Test
@@ -22,7 +22,7 @@ class ResponseEntityTest {
     @Test
     void getUserReturnsNullWhenUserIdNotSet() {
         ResponseEntity responseEntity = new ResponseEntity();
-        assertNull(responseEntity.getUser());
+        assertNull(responseEntity.getUserId());
     }
 
     @Test

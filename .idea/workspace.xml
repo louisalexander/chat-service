@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d6a73054-f37c-4181-96cb-8ffcfc3bea4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/controllers/ResponseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/controllers/ResponseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/dynamo/DynamoDbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/dynamo/DynamoDbConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pk/ask/AskControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pk/app/chatservice/responses/ResponseEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pk/app/chatservice/responses/ResponseEntityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/ai/spring-ai-core/1.0.0-M5/spring-ai-core-1.0.0-M5.jar!/org/springframework/ai/chat/client/advisor/api/Advisor.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/software/amazon/awssdk/dynamodb-enhanced/2.30.11/dynamodb-enhanced-2.30.11.jar!/software/amazon/awssdk/enhanced/dynamodb/model/PageIterable.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-17.0.13/Contents/Home/lib/src.zip!/java.base/java/lang/RuntimeException.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -45,10 +49,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Attach to process.localhost:8000.executor": "ProcessAttachDebug",
     "JUnit.AskControllerTest.executor": "Run",
     "JUnit.ChatServiceAppTests.executor": "Run",
     "JUnit.ResponseRepositoryTest.executor": "Run",
     "JUnit.StorageTest.executor": "Run",
+    "Maven.chat-service [spring-boot:run...].executor": "Debug",
+    "Remote JVM Debug.Unnamed.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -56,7 +63,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/pk/code/chat-service",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -78,7 +85,7 @@
       <recent name="com.pk.persistence" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResponseRepositoryTest">
+  <component name="RunManager" selected="Remote JVM Debug.Unnamed">
     <configuration name="AskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat-service" />
       <extension name="coverage">
@@ -87,8 +94,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.pk.chat" />
+      <option name="PACKAGE_NAME" value="com.pk.ask" />
       <option name="MAIN_CLASS_NAME" value="com.pk.ask.AskControllerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,6 +127,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.pk.app.chatservice.responses" />
       <option name="MAIN_CLASS_NAME" value="com.pk.app.chatservice.responses.ResponseRepositoryTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,6 +148,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="Remote" nameIsGenerated="true">
+      <module name="chat-service" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.AskControllerTest" />
+      <item itemvalue="JUnit.ChatServiceAppTests" />
+      <item itemvalue="JUnit.ResponseRepositoryTest" />
+      <item itemvalue="JUnit.StorageTest" />
+      <item itemvalue="Remote JVM Debug.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ResponseRepositoryTest" />
@@ -159,6 +189,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -172,7 +213,36 @@
           <line>47</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/dynamo/DynamoDbConfig.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseService.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/software/amazon/awssdk/dynamodb-enhanced/2.30.11/dynamodb-enhanced-2.30.11.jar!/software/amazon/awssdk/enhanced/dynamodb/internal/client/DefaultDynamoDbTable.class</url>
+          <line>210</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pk/app/chatservice/responses/ResponseRepository.java</url>
+          <line>29</line>
+          <properties class="com.pk.app.chatservice.responses.ResponseRepository" method="save">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="software.amazon.awssdk.enhanced.dynamodb.EnhancedType" memberName="tableSchema" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

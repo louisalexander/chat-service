@@ -3,6 +3,7 @@ package com.pk.app.chatservice.responses;
 import lombok.Data;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
 
 @DynamoDbBean
 @Data
@@ -11,8 +12,20 @@ public class ResponseEntity {
 
     private String userId;
 
+    private String liked;
+
+    private String didntLike;
+
+    private String recipeId;
+
     @DynamoDbPartitionKey
-    public String getUser() {
+    public String getRecipeId() {
+        return recipeId;
+    }
+
+    @DynamoDbSortKey
+    public String getUserId() {
         return userId;
     }
+
 }
