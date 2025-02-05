@@ -3,14 +3,25 @@ services:
     image: 'qdrant/qdrant:latest'
     ports:
       - '6334:6334'
-
-  dynamo:
-    image: amazon/dynamodb-local
-#    environment:
-#      - ./Djava.library.path=./DynamoDBLocal_lib
+  dynamodb-local:
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
     ports:
       - "8000:8000"
-#    volumes:
-#      - /home/dynamodblocal/data
-#    working_dir: /home/dynamodblocal
-    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb"]
+    restart: always
+    volumes:
+      - "./data:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+
+  dynamodb:
+    image: "aaronshaf/dynamodb-admin"
+    container_name: dynamodb-admin
+    depends_on:
+      - dynamodb-local
+    restart: always
+    ports:
+      - "8001:8001"
+    environment:
+      - DYNAMO_ENDPOINT=http://dynamodb-local:8000
+      - AWS_REGION=ap-southeast-1

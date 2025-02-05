@@ -31,5 +31,4 @@ public class LoaderConfig {
       log.info("Documents loaded into vector store");
     };
   }
-
 }
